@@ -1,0 +1,11 @@
+version: '3'
+services:
+  deatchmatch:
+    image: csgo
+    ports:
+      - "27015:27015"
+      - "27015:27015/udp"
+    volumes:
+      - ./.server.cfg:/home/csgo/hlserver/csgo/csgo/cfg/server.cfg
+      - ./deathmatch_autoexec.cfg:/home/csgo/hlserver/csgo/csgo/cfg/autoexec.cfg
+    command: -console -usercon +game_type 1 +game_mode 2 +mapgroup mg_allclassic
