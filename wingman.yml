@@ -1,0 +1,11 @@
+version: '3'
+services:
+  wingman:
+    image: csgo
+    ports:
+      - "27017:27015"
+      - "27017:27015/udp"
+    volumes:
+      - ./.server.cfg:/home/csgo/hlserver/csgo/csgo/cfg/server.cfg
+      - ./wingman_autoexec.cfg:/home/csgo/hlserver/csgo/csgo/cfg/autoexec.cfg
+    command: -console -usercon +game_type 0 +game_mode 2 +mapgroup mg_bomb +sv_lan 1
